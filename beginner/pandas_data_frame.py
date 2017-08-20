@@ -20,15 +20,15 @@ print(cars)
 # Import pandas as pd
 import pandas as pd
 
-# Fix import by including index_col
-cars = pd.read_csv('cars.csv', index_col = 0)
+# # Fix import by including index_col
+# cars = pd.read_csv('cars.csv', index_col = 0)
 
-# Print out cars
-print(cars)
+# # Print out cars
+# print(cars)
 
-# Import cars data
-import pandas as pd
-cars = pd.read_csv('cars.csv', index_col = 0)
+# # Import cars data
+# import pandas as pd
+# cars = pd.read_csv('cars.csv', index_col = 0)
 
 # Print out country column as Pandas Series
 print(cars['country'])
