@@ -1,18 +1,19 @@
 # Import pandas as pd
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Assign the filename: file
-file = 'titanic.csv'
+file = '../DataSets/titanic.csv'
 
 # Read the file into a DataFrame: df
 df = pd.read_csv(file)
 
 # View the head of the DataFrame
-print(df.head())
+# print(df.head())
 
-#-----------------------------------------------
+# -----------------------------------------------
 # Assign the filename: file
-file = 'digits.csv'
+file = '../DataSets/digits.csv'
 
 # Read the first 5 rows of the file into a DataFrame: data
 data = pd.read_csv(file, nrows=5, header=None)
@@ -21,16 +22,14 @@ data = pd.read_csv(file, nrows=5, header=None)
 data_array = data.values
 
 # Print the datatype of data_array to the shell
-print(type(data_array))
-#-----------------------------------------------
-# Import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
+# print(type(data_array))
+# -----------------------------------------------
 
 # Assign filename: file
-file = 'titanic_corrupt.txt'
+file = '../DataSets/titanic_corrupted.csv'
 
 # Import file: data
-data = pd.read_csv(file, sep='\t', comment='#', na_values='Nothing')
+data = pd.read_csv(file, sep=',', comment='#', na_values=['', 'Nothing'], header=0)
 
 # Print the head of the DataFrame
 print(data.head())
@@ -41,4 +40,5 @@ plt.xlabel('Age (years)')
 plt.ylabel('count')
 plt.show()
 
-#-----------------------------------------------
+# -----------------------------------------------
+
