@@ -1,5 +1,6 @@
 # Import numpy as np
 import numpy as np
+import matplotlib as plt
 
 # Store pop as a numpy array: np_pop
 np_pop = np.array(pop)
@@ -8,7 +9,7 @@ np_pop = np.array(pop)
 np_pop *= 2
 
 # Update: set s argument to np_pop
-plt.scatter(gdp_cap, life_exp, s = np_pop)
+plt.scatter(gdp_cap, life_exp, s=np_pop)
 
 # Previous customizations
 plt.xscale('log') 
