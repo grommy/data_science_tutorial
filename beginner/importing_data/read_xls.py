@@ -2,7 +2,7 @@
 import pandas as pd
 
 # Assign spreadsheet filename: file
-file = 'battledeath.xlsx'
+file = '../DataSets/battledeath.xlsx'
 
 # Load spreadsheet: xl
 xl = pd.ExcelFile(file)
@@ -26,7 +26,7 @@ df2 = xl.parse(0)
 print(df2.head())
 
 # Parse the first sheet and rename the columns: df1
-df1 = xl.parse(0, skiprows=1, names=['Country','AAM due to War (2002)'])
+df1 = xl.parse(0, skiprows=1, names=['Country', 'AAM due to War (2002)'])
 
 # Print the head of the DataFrame df1
 print(df1.head())
