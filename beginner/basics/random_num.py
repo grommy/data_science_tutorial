@@ -8,9 +8,9 @@ np.random.seed(123)
 print(np.random.rand())
 
 # Use randint() to simulate a dice
-print(np.random.randint(1,7))
+print(np.random.randint(1, 7))
 
------------------------------------
+#-----------------------------------
 # Initialization
 import numpy as np
 
@@ -19,7 +19,7 @@ random_walk = [0]
 
 for x in range(100) :
     step = random_walk[-1]
-    dice = np.random.randint(1,7)
+    dice = np.random.randint(1, 7)
 
     if dice <= 2:
         step = max(0, step - 1)
