@@ -100,3 +100,40 @@ overcast_daily_max = overcast.resample('D').max()
 
 # Print the difference between the mean of sunny_daily_max and overcast_daily_max
 print(sunny_daily_max.mean() - overcast_daily_max.mean())
+
+# Import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+
+# Select the visibility and dry_bulb_faren columns and resample them: weekly_mean
+weekly_mean = df_clean[['wind_speed', 'dry_bulb_faren']].resample('W').mean()
+# Print the output of weekly_mean.corr()
+print(weekly_mean.corr())
+
+# Plot weekly_mean with subplots=True
+weekly_mean.plot(subplots=True)
+plt.show()
+
+# Create a Boolean Series for sunny days: sunny
+sunny = df_clean['sky_condition'] == 'CLR'
+
+# Resample the Boolean Series by day and compute the sum: sunny_hours
+sunny_hours = sunny.resample("D").sum()
+
+# Resample the Boolean Series by day and compute the count: total_hours
+total_hours = sunny.resample("D").count()
+
+# Divide sunny_hours by total_hours: sunny_fraction
+sunny_fraction = sunny_hours / total_hours
+
+# Make a box plot of sunny_fraction
+sunny_fraction.plot(kind='box')
+plt.show()
+
+# Resample dew_point_faren and dry_bulb_faren by Month, aggregating the maximum values: monthly_max
+monthly_max = df_clean[['dew_point_faren', 'dry_bulb_faren']].resample('M').max()
+
+# Generate a histogram with bins=8, alpha=0.5, subplots=True
+monthly_max.plot(kind='hist', bins=8, alpha=0.5, subplots=True)
+
+# Show the plot
+plt.show()
