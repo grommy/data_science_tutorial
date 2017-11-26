@@ -10,14 +10,6 @@ df = swing_states[df_filter]
 dem_share = df['dem_share']
 total_votes = df['total_votes']
 
-# _ = plt.plot(total_votes/1000, dem_share, marker='.', linestyle='none')
-# plt.margins(0.02)
-# plt.xlabel('total_votes')
-# plt.ylabel('dem_share')
-#
-# plt.show()
-
-
 # Compute the covariance matrix: covariance_matrix
 covariance_matrix = np.cov(total_votes, dem_share)
 # Extract covariance
@@ -26,3 +18,11 @@ print(total_dem_cov)
 
 pearson = np.corrcoef(total_votes, dem_share)
 print(pearson[0, 1])
+
+_ = plt.plot(total_votes/1000, dem_share, marker='.', linestyle='none')
+plt.margins(0.02)
+plt.xlabel('total_votes')
+plt.ylabel('dem_share')
+
+plt.show()
+
