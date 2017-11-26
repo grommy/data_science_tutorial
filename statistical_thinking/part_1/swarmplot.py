@@ -1,9 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.datasets import load_iris
-
-iris = load_iris()
 
 swing_states = pd.read_csv("../DataSets/2008_swing_states.csv")
 print(swing_states.head())
