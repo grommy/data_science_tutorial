@@ -18,7 +18,18 @@ def ecdf(data):
 
     return x, y
 
+
+def draw_pmf(data):
+    bins = np.arange(0, max(data) + 2) - 0.5
+    _ = plt.hist(data, bins=bins, normed=True)
+    # Set margins
+    plt.margins(0.02)
+    plt.ylabel('Probability mass function')
+    plt.show()
+
+
 swing_states = pd.read_csv("../DataSets/2008_swing_states.csv")
+print(swing_states.columns)
 
 df_filter = swing_states['state'] == 'PA'
 df = swing_states[df_filter]
