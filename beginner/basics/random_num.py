@@ -1,6 +1,6 @@
 # Import numpy as np
 import numpy as np
-
+import matplotlib.pyplot as plt
 # Set the seed
 np.random.seed(123)
 
@@ -10,10 +10,7 @@ print(np.random.rand())
 # Use randint() to simulate a dice
 print(np.random.randint(1, 7))
 
-#-----------------------------------
-# Initialization
-import numpy as np
-
+# -------------------------
 np.random.seed(123)
 random_walk = [0]
 
@@ -24,14 +21,11 @@ for x in range(100):
     if dice <= 2:
         step = max(0, step - 1)
     elif dice <= 5:
-        step = step + 1
+        step += 1
     else:
-        step = step + np.random.randint(1, 7)
+        step += np.random.randint(1, 7)
 
     random_walk.append(step)
-
-# Import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
 
 # Plot random_walk
 
