@@ -1,10 +1,11 @@
 # import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from statistical_thinking.regression.fertility_data import fertility, illiteracy
 
-illiteracy = np.array(range(0, 101))
+# illiteracy = np.array(range(0, 101))
+# fertility = illiteracy * 2 + 1 + np.random.randint(-1, 7, size=101)
 
-fertility = illiteracy * 2 + 1 + np.random.randint(-1, 7, size=101)
 # Plot the illiteracy rate versus fertility
 _ = plt.plot(illiteracy, fertility, marker='.', linestyle='none')
 plt.margins(0.02)
