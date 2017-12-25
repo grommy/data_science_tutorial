@@ -17,7 +17,7 @@ _ = plt.ylabel('impact force (N)')
 # Show the plot
 plt.show()
 
-# --------Null hypothesis: mean_a is equal to mean_b ----------------------------------------------
+# Null hypothesis: force_a have the same distribution as force_b(mean_a is equal to mean_b)
 force_a = df[df.ID == 'A']['impact_force'].values
 force_b = df[df.ID == 'B']['impact_force'].values
 
