@@ -70,3 +70,7 @@ def ecdf(data):
         y = np.arange(1.0, 1.0+n) / n
 
         return x, y
+
+
+def diff_of_means(a, b):
+    return np.mean(a) - np.mean(b)
