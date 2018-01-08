@@ -56,6 +56,43 @@ class Bootstrap(object):
 
         return bs_replicates
 
+    @classmethod
+    def draw_bs_pairs_linreg(cls, x, y, size=1):
+        """Perform pairs bootstrap for linear regression."""
+
+        # Set up array of indices to sample from: inds
+        inds = np.arange(len(x))
+
+        # Initialize replicates: bs_slope_reps, bs_intercept_reps
+        bs_slope_reps = np.empty(size)
+        bs_intercept_reps = np.empty(size)
+
+        # Generate replicates
+        for i in range(size):
+            bs_inds = np.random.choice(inds, size=len(inds))
+            bs_x, bs_y = x[bs_inds], y[bs_inds]
+            bs_slope_reps[i], bs_intercept_reps[i] = np.polyfit(bs_x, bs_y, 1)
+
+        return bs_slope_reps, bs_intercept_reps
+
+    @classmethod
+    def draw_bs_pairs(cls, x, y, func, size=1):
+        """Perform pairs bootstrap and computes a single statistic on       the pairs samples."""
+
+        # Set up array of indices to sample from: inds
+        inds = np.arange(len(x))
+
+        # Initialize replicates
+        bs_replicates = np.empty(size)
+
+        # Generate replicates
+        for i in range(size):
+            bs_inds = np.random.choice(inds, size=len(inds))
+            bs_x, bs_y = x[bs_inds], y[bs_inds]
+            bs_replicates[i] = func(bs_x, bs_y)
+
+        return bs_replicates
+
 
 def ecdf(data):
         """Compute ECDF for a one-dimensional array of measurements."""
@@ -74,3 +111,7 @@ def ecdf(data):
 
 def diff_of_means(a, b):
     return np.mean(a) - np.mean(b)
+
+
+def pearson_r(a, b):
+    return np.corrcoef(a, b)[0, 1]
