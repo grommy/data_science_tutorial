@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 
 
-path = "DataSets/house-votes-84.csv"
+path = "../DataSets/house-votes-84.csv"
 columns = ['party', 'infants', 'water', 'budget', 'physician', 'salvador',
            'religious', 'satellite', 'aid', 'missile', 'immigration', 'synfuels',
            'education', 'superfund', 'crime', 'duty_free_exports', 'eaa_rsa']
